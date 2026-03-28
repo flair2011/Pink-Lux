@@ -3,32 +3,96 @@
 import React from "react";
 
 const Navbar = () => {
+  const [isOpen, setIsOpen] = React.useState(false);
+
   return (
-    <nav className="fixed top-0 w-full z-50 bg-background/70 backdrop-blur-xl shadow-editorial">
-      <div className="flex justify-between items-center w-full px-6 py-4 max-w-7xl mx-auto">
-        <div className="flex items-center gap-2">
-          <span className="material-symbols-outlined text-primary">spa</span>
-          <span className="text-xl font-headline italic text-primary">
-            Pink Lux Concierge
-          </span>
+    <>
+      <nav className="fixed top-0 w-full z-40 bg-background/70 backdrop-blur-xl shadow-editorial">
+        <div className="flex justify-between items-center w-full px-6 py-4 max-w-7xl mx-auto">
+          <div className="flex items-center gap-2">
+            <span className="material-symbols-outlined text-primary">spa</span>
+            <span className="text-xl font-headline italic text-primary">
+              Pink Lux Concierge
+            </span>
+          </div>
+          
+          {/* Desktop Navigation */}
+          <div className="hidden md:flex items-center gap-8">
+            <a href="#services" className="text-sm font-medium text-on-surface-variant hover:text-primary transition-colors">Services</a>
+            <a href="#experience" className="text-sm font-medium text-on-surface-variant hover:text-primary transition-colors">Experience</a>
+            <a href="#faq" className="text-sm font-medium text-on-surface-variant hover:text-primary transition-colors">FAQs</a>
+            <button className="bg-primary text-on-primary px-6 py-2 rounded-full font-medium text-sm hover:opacity-80 transition-opacity active:scale-95 duration-200">
+              Reserve Your Stay
+            </button>
+          </div>
+
+          {/* Mobile menu button */}
+          <button 
+            className="md:hidden text-primary p-2"
+            onClick={() => setIsOpen(true)}
+            aria-label="Open menu"
+          >
+            <span className="material-symbols-outlined">menu</span>
+          </button>
         </div>
-        
-        {/* Desktop Navigation */}
-        <div className="hidden md:flex items-center gap-8">
-          <a href="#services" className="text-sm font-medium text-on-surface-variant hover:text-primary transition-colors">Services</a>
-          <a href="#experience" className="text-sm font-medium text-on-surface-variant hover:text-primary transition-colors">Experience</a>
-          <a href="#faq" className="text-sm font-medium text-on-surface-variant hover:text-primary transition-colors">FAQs</a>
-          <button className="bg-primary text-on-primary px-6 py-2 rounded-full font-medium text-sm hover:opacity-80 transition-opacity active:scale-95 duration-200">
-            Reserve Your Stay
+      </nav>
+
+      {/* Independent Mobile menu overlay */}
+      <div 
+        className={`fixed inset-0 bg-background/95 backdrop-blur-xl z-50 md:hidden transition-transform duration-300 ease-in-out ${
+          isOpen ? "translate-x-0" : "translate-x-full"
+        }`}
+      >
+        {/* Mobile Header (Inside Overlay) */}
+        <div className="flex justify-between items-center w-full px-6 py-4 border-b border-primary/10">
+          <div className="flex items-center gap-2">
+            <span className="material-symbols-outlined text-primary">spa</span>
+            <span className="text-xl font-headline italic text-primary">
+              Pink Lux Concierge
+            </span>
+          </div>
+          <button 
+            className="text-primary p-2"
+            onClick={() => setIsOpen(false)}
+            aria-label="Close menu"
+          >
+            <span className="material-symbols-outlined text-2xl">close</span>
           </button>
         </div>
 
-        {/* Mobile menu button */}
-        <button className="md:hidden text-primary">
-          <span className="material-symbols-outlined">menu</span>
-        </button>
+        {/* Mobile Menu Items */}
+        <div className="flex flex-col items-center pt-24 h-full gap-8 p-6 overflow-y-auto pb-32">
+          <a 
+            href="#services" 
+            className="text-3xl font-headline italic text-primary hover:tracking-widest transition-all duration-300"
+            onClick={() => setIsOpen(false)}
+          >
+            Services
+          </a>
+          <a 
+            href="#experience" 
+            className="text-3xl font-headline italic text-primary hover:tracking-widest transition-all duration-300"
+            onClick={() => setIsOpen(false)}
+          >
+            Experience
+          </a>
+          <a 
+            href="#faq" 
+            className="text-3xl font-headline italic text-primary hover:tracking-widest transition-all duration-300"
+            onClick={() => setIsOpen(false)}
+          >
+            FAQs
+          </a>
+          <div className="w-16 h-[1px] bg-primary/20 my-6 shrink-0" />
+          <button 
+            className="bg-primary text-on-primary px-12 py-5 rounded-full font-bold editorial-shadow active:scale-95 transition-all text-xl shrink-0"
+            onClick={() => setIsOpen(false)}
+          >
+            Reserve Your Stay
+          </button>
+        </div>
       </div>
-    </nav>
+    </>
   );
 };
 
