@@ -11,6 +11,7 @@ const Hero = () => {
           fill
           className="object-cover"
           priority
+          sizes="100vw"
         />
         <div className="absolute inset-0 bg-gradient-to-r from-surface via-surface/60 to-transparent"></div>
       </div>

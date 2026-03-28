@@ -15,6 +15,7 @@ const PackageSection = () => {
               alt="Luxury kitchen where nutritious recovery meals are prepared"
               fill
               className="object-cover"
+              sizes="(max-width: 896px) 100vw, 896px"
             />
           </div>
           <h2 className="font-headline italic text-4xl text-primary mb-4">All-Inclusive Recovery Package</h2>
