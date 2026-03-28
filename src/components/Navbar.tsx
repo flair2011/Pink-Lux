@@ -39,7 +39,7 @@ const Navbar = () => {
 
       {/* Independent Mobile menu overlay */}
       <div 
-        className={`fixed inset-0 bg-background/95 backdrop-blur-xl z-50 md:hidden transition-transform duration-300 ease-in-out ${
+        className={`fixed inset-0 bg-background/80 backdrop-blur-xl z-50 md:hidden transition-transform duration-300 ease-in-out ${
           isOpen ? "translate-x-0" : "translate-x-full"
         }`}
       >
