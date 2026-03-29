@@ -54,6 +54,26 @@ const BookingSection = () => {
                 />
               </div>
             </div>
+
+            <div className="grid md:grid-cols-2 gap-6">
+              <div>
+                <label className="block text-sm font-semibold mb-2 ml-1">Phone Number</label>
+                <input
+                  className="w-full bg-surface-container-low border-none rounded-xl p-4 focus:ring-2 focus:ring-primary/20 outline-none"
+                  placeholder="(555) 123-4567"
+                  type="tel"
+                />
+              </div>
+              <div>
+                <label className="block text-sm font-semibold mb-2 ml-1">Emergency Contact</label>
+                <input
+                  className="w-full bg-surface-container-low border-none rounded-xl p-4 focus:ring-2 focus:ring-primary/20 outline-none"
+                  placeholder="Name & Phone Number"
+                  type="text"
+                />
+              </div>
+            </div>
+
             <div className="grid md:grid-cols-2 gap-6">
               <div>
                 <label className="block text-sm font-semibold mb-2 ml-1">Surgery Date</label>
@@ -73,13 +93,43 @@ const BookingSection = () => {
                 </select>
               </div>
             </div>
-            <div>
-              <label className="block text-sm font-semibold mb-2 ml-1">Special Requirements or Notes</label>
-              <textarea
-                className="w-full bg-surface-container-low border-none rounded-xl p-4 focus:ring-2 focus:ring-primary/20 outline-none"
-                placeholder="Tell us about any allergies or specific needs..."
-                rows={4}
-              ></textarea>
+
+            <div className="grid md:grid-cols-2 gap-6">
+              <div>
+                <label className="block text-sm font-semibold mb-2 ml-1">Surgeon</label>
+                <input
+                  className="w-full bg-surface-container-low border-none rounded-xl p-4 focus:ring-2 focus:ring-primary/20 outline-none"
+                  placeholder="Dr. Smith"
+                  type="text"
+                />
+              </div>
+              <div>
+                <label className="block text-sm font-semibold mb-2 ml-1">Surgical Center</label>
+                <input
+                  className="w-full bg-surface-container-low border-none rounded-xl p-4 focus:ring-2 focus:ring-primary/20 outline-none"
+                  placeholder="Clinic Name & Location"
+                  type="text"
+                />
+              </div>
+            </div>
+
+            <div className="grid md:grid-cols-2 gap-6">
+              <div>
+                <label className="block text-sm font-semibold mb-2 ml-1">Allergies</label>
+                <input
+                  className="w-full bg-surface-container-low border-none rounded-xl p-4 focus:ring-2 focus:ring-primary/20 outline-none"
+                  placeholder="Medications, food, latex, etc."
+                  type="text"
+                />
+              </div>
+              <div>
+                <label className="block text-sm font-semibold mb-2 ml-1">Special Requirements</label>
+                <input
+                  className="w-full bg-surface-container-low border-none rounded-xl p-4 focus:ring-2 focus:ring-primary/20 outline-none"
+                  placeholder="Any additional notes..."
+                  type="text"
+                />
+              </div>
             </div>
             <div className="flex items-center gap-4 p-4 rounded-xl bg-secondary-container/10 border border-secondary/20">
               <span className="material-symbols-outlined text-secondary">payments</span>
