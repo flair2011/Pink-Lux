@@ -3,26 +3,26 @@
 import React, { useState } from "react";
 
 const BookingSection = () => {
-  const [activeTab, setActiveTab] = useState("recovery-stay");
+  const [activeTab, setActiveTab] = useState("short-term-stay");
 
   return (
     <section className="py-24 bg-surface px-6" id="booking">
       <div className="max-w-4xl mx-auto">
         <div className="text-center mb-12">
           <h2 className="font-headline italic text-4xl md:text-5xl text-primary mb-4">Start Your Journey</h2>
-          <p className="text-on-surface-variant">Submit your details and we will reach out to finalize your recovery plan.</p>
+          <p className="text-on-surface-variant">Submit your details and we will reach out to finalize your stay plan.</p>
         </div>
         <div className="bg-surface-container-lowest rounded-[3rem] editorial-shadow overflow-hidden">
           <div className="flex border-b border-outline-variant/10">
             <button
-              onClick={() => setActiveTab("recovery-stay")}
+              onClick={() => setActiveTab("short-term-stay")}
               className={`flex-1 py-6 font-bold transition-all ${
-                activeTab === "recovery-stay" 
+                activeTab === "short-term-stay" 
                   ? "text-primary bg-primary/5 border-b-2 border-primary" 
                   : "text-on-surface-variant hover:bg-surface-container-low"
               }`}
             >
-              Recovery Stay
+              Short Term Stay
             </button>
             <button
               onClick={() => setActiveTab("mobile-care")}

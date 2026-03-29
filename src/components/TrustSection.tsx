@@ -5,7 +5,7 @@ const TrustSection = () => {
     <section className="bg-primary text-on-primary py-24 px-6 overflow-hidden">
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-16">
-          <h2 className="font-headline italic text-4xl md:text-5xl mb-6">Designed with Your Recovery in Mind</h2>
+          <h2 className="font-headline italic text-4xl md:text-5xl mb-6">Designed with Your Retreat in Mind</h2>
           <div className="inline-block px-4 py-1 rounded-full bg-white/10 text-sm tracking-wider uppercase">Non-medical post-op support</div>
         </div>
         <div className="grid grid-cols-2 md:grid-cols-4 gap-8">

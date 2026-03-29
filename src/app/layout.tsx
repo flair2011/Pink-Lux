@@ -2,8 +2,8 @@ import type { Metadata } from "next";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "Pink Lux Concierge | Luxury Post-Op Recovery Miami",
-  description: "Bespoke post-operative care in the heart of Miami. Experience the intersection of clinical excellence and quiet luxury.",
+  title: "Pink Lux Concierge | Luxury Post-Op Stays Miami",
+  description: "Bespoke post-operative support in the heart of Miami. Experience the intersection of clinical excellence and quiet luxury.",
 };
 
 export default function RootLayout({

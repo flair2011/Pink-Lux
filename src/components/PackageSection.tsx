@@ -12,14 +12,14 @@ const PackageSection = () => {
           <div className="mb-8 rounded-2xl overflow-hidden h-48 relative">
             <Image
               src="/kitchen.jpeg"
-              alt="Luxury kitchen where nutritious recovery meals are prepared"
+              alt="Luxury kitchen where nutritious retreat meals are prepared"
               fill
               className="object-cover"
               sizes="(max-width: 896px) 100vw, 896px"
             />
           </div>
-          <h2 className="font-headline italic text-4xl text-primary mb-4">All-Inclusive Recovery Package</h2>
-          <p className="text-on-surface-variant mb-12">The essentials for a seamless Miami recovery.</p>
+          <h2 className="font-headline italic text-4xl text-primary mb-4">All-Inclusive Short Term Stay Package</h2>
+          <p className="text-on-surface-variant mb-12">The essentials for a seamless Miami short term stay.</p>
           <div className="grid sm:grid-cols-2 gap-6 text-left mb-12">
             <div className="flex items-center gap-4 p-4 rounded-2xl bg-surface-container-low">
               <span className="material-symbols-outlined text-primary">night_shelter</span>

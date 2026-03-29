@@ -33,19 +33,23 @@ const FAQ = () => {
   const faqs = [
     {
       question: "Are you a medical facility?",
-      answer: "No, Pink Lux Concierge provides non-medical post-operative support and companionship services only. We operate strictly within the recovery protocols provided by your licensed surgeon."
+      answer: "No, Pink Lux Concierge provides non-medical post-operative support and companionship services only. We operate strictly within the stay protocols provided by your licensed surgeon."
     },
     {
       question: "What procedures do you support?",
-      answer: "We specialize in supporting recovery for BBL, Liposuction, Tummy Tucks, Breast Augmentations, and Mummy Makeovers, among other cosmetic procedures."
+      answer: "We specialize in supporting short term stays for BBL, Liposuction, Tummy Tucks, Breast Augmentations, and Mummy Makeovers, among other cosmetic procedures."
     },
     {
       question: "Is transportation from the airport included?",
-      answer: "Yes, our all-inclusive recovery package includes MIA airport coordination and all surgical transportation."
+      answer: "Yes, our all-inclusive short term stay package includes MIA airport coordination (departure only) and all surgical transportation. Note: We do not offer Miami Airport arrival pick-up."
     },
     {
       question: "How do I book for an extended stay?",
       answer: "Extended stay options are available upon request. Please mention your desired duration in the special requirements section of our booking form."
+    },
+    {
+      question: "Do you offer in-house massage?",
+      answer: "Yes, we offer in-house massages at an additional cost."
     }
   ];
 

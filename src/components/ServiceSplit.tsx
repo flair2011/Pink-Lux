@@ -12,27 +12,49 @@ const ServiceSplit = () => {
             </div>
             <span className="text-secondary font-semibold tracking-widest text-xs uppercase">Option 1</span>
           </div>
-          <h3 className="font-headline text-3xl mb-4 italic">Luxury Recovery Stay</h3>
+          <h3 className="font-headline text-3xl mb-4 italic">Luxury Short Term Stay</h3>
           <p className="text-on-surface-variant mb-8">
-            Our signature all-inclusive sanctuary. From high-end accommodations to surgical transport, every detail of your recovery is managed with grace.
+            Our signature all-inclusive sanctuary. From high-end accommodations to surgical transport, every detail of your short term stay is managed with grace.
           </p>
-          <ul className="space-y-4 mb-10">
+          <ul className="space-y-4 mb-4">
             <li className="flex items-center gap-3">
               <span className="material-symbols-outlined text-primary text-sm">check_circle</span> 
-              Premium Recovery Accommodations
+              24/7 licensed staff
             </li>
             <li className="flex items-center gap-3">
               <span className="material-symbols-outlined text-primary text-sm">check_circle</span> 
-              3 Nutritious Meals Daily
+              In-House Registered RN
             </li>
             <li className="flex items-center gap-3">
               <span className="material-symbols-outlined text-primary text-sm">check_circle</span> 
-              All Surgical Transportation
+              In-house Massages (additional cost)
+            </li>
+            <li className="flex items-center gap-3">
+              <span className="material-symbols-outlined text-primary text-sm">check_circle</span> 
+              Unlimited Fluids
+            </li>
+            <li className="flex items-center gap-3">
+              <span className="material-symbols-outlined text-primary text-sm">check_circle</span> 
+              Post op supplies included
+            </li>
+            <li className="flex items-center gap-3">
+              <span className="material-symbols-outlined text-primary text-sm">check_circle</span> 
+              Transportation-Surgery date Roundtrip
+            </li>
+            <li className="flex items-center gap-3">
+              <span className="material-symbols-outlined text-primary text-sm">check_circle</span> 
+              1 postoperative appointment roundtrip
+            </li>
+            <li className="flex items-center gap-3">
+              <span className="material-symbols-outlined text-primary text-sm">check_circle</span> 
+              Miami Airport Departure Transportation
             </li>
           </ul>
-          <button className="w-full py-4 rounded-full border border-primary text-primary font-bold hover:bg-primary hover:text-white transition-all">
-            Learn More
-          </button>
+          <div className="bg-primary/5 p-4 rounded-xl border border-primary/10">
+            <p className="text-sm font-semibold text-primary mb-1">4 night minimum • $275 / night</p>
+            <p className="text-xs text-on-surface-variant">Payment Methods: Cash App, Apple Pay, or Zelle</p>
+            <p className="text-xs text-on-surface-variant mt-2 italic">* Note: We do not offer Miami Airport arrival pick-up.</p>
+          </div>
         </div>
 
         {/* Option 2 */}
@@ -47,7 +69,7 @@ const ServiceSplit = () => {
           <p className="text-on-surface-variant mb-8">
             Professional care that comes to you. We provide expert support at your preferred hotel or Airbnb, ensuring safety in your own space.
           </p>
-          <ul className="space-y-4 mb-10">
+          <ul className="space-y-4 mb-4">
             <li className="flex items-center gap-3">
               <span className="material-symbols-outlined text-secondary text-sm">check_circle</span> 
               Personalized Caregiver Support
@@ -60,10 +82,19 @@ const ServiceSplit = () => {
               <span className="material-symbols-outlined text-secondary text-sm">check_circle</span> 
               Post-Op Errand Coordination
             </li>
+            <li className="flex items-center gap-3">
+              <span className="material-symbols-outlined text-secondary text-sm">check_circle</span> 
+              Includes post surgery supplies
+            </li>
+            <li className="flex items-center gap-3">
+              <span className="material-symbols-outlined text-secondary text-sm">check_circle</span> 
+              Surgery pick up Miami area only
+            </li>
           </ul>
-          <button className="w-full py-4 rounded-full border border-secondary text-secondary font-bold hover:bg-secondary hover:text-white transition-all">
-            Explore Mobile Care
-          </button>
+          <div className="bg-secondary/5 p-4 rounded-xl border border-secondary/10">
+            <p className="text-sm font-semibold text-secondary mb-1">$350 for 2 hour post surgery each</p>
+            <p className="text-sm font-semibold text-secondary">$150 additional hour</p>
+          </div>
         </div>
       </div>
     </section>
