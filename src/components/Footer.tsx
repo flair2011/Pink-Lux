@@ -12,7 +12,7 @@ const Footer = () => {
 
       <div className="grid grid-cols-1 md:grid-cols-4 gap-12 px-8 max-w-7xl mx-auto">
         <div className="space-y-4">
-          <span className="text-lg font-headline italic text-primary">Pink Lux Concierge</span>
+          <img src="/pinkluxconcierge-logo.jpeg" alt="Pink Lux Concierge Logo" className="h-16 w-auto object-contain mix-blend-multiply rounded-lg shadow-sm border border-primary/10" />
           <p className="text-sm opacity-70">Elevating the standards of post-operative short term stays in Miami.</p>
         </div>
         <div className="flex flex-col gap-4">

@@ -10,10 +10,7 @@ const Navbar = () => {
       <nav className="fixed top-0 w-full z-40 bg-background/70 backdrop-blur-xl shadow-editorial">
         <div className="flex justify-between items-center w-full px-6 py-4 max-w-7xl mx-auto">
           <div className="flex items-center gap-2">
-            <span className="material-symbols-outlined text-primary">spa</span>
-            <span className="text-xl font-headline italic text-primary">
-              Pink Lux Concierge
-            </span>
+            <img src="/pinkluxconcierge-logo.jpeg" alt="Pink Lux Concierge" className="h-12 md:h-16 w-auto mix-blend-multiply border border-primary/20 rounded-lg shadow-sm" />
           </div>
           
           {/* Desktop Navigation */}
@@ -46,10 +43,7 @@ const Navbar = () => {
         {/* Mobile Header (Inside Overlay) */}
         <div className="flex justify-between items-center w-full px-6 py-4 border-b border-primary/10">
           <div className="flex items-center gap-2">
-            <span className="material-symbols-outlined text-primary">spa</span>
-            <span className="text-xl font-headline italic text-primary">
-              Pink Lux Concierge
-            </span>
+            <img src="/pinkluxconcierge-logo.jpeg" alt="Pink Lux Concierge" className="h-12 w-auto mix-blend-multiply border border-primary/20 rounded-lg shadow-sm" />
           </div>
           <button 
             className="text-primary p-2"
