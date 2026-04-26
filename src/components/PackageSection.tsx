@@ -23,7 +23,7 @@ const PackageSection = () => {
           <div className="grid sm:grid-cols-2 gap-6 text-left mb-12">
             <div className="flex items-center gap-4 p-4 rounded-2xl bg-surface-container-low">
               <span className="material-symbols-outlined text-primary">night_shelter</span>
-              <span className="font-medium">Minimum 2 Nights Stay</span>
+              <span className="font-medium">Minimum 4 Nights Stay</span>
             </div>
             <div className="flex items-center gap-4 p-4 rounded-2xl bg-surface-container-low">
               <span className="material-symbols-outlined text-primary">restaurant</span>

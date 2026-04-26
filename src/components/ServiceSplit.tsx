@@ -10,7 +10,6 @@ const ServiceSplit = () => {
             <div className="p-4 bg-primary-container rounded-2xl">
               <span className="material-symbols-outlined text-primary text-3xl">hotel</span>
             </div>
-            <span className="text-secondary font-semibold tracking-widest text-xs uppercase">Option 1</span>
           </div>
           <h3 className="font-headline text-3xl mb-4 italic">Luxury Short Term Stay</h3>
           <p className="text-on-surface-variant mb-8">
@@ -19,15 +18,15 @@ const ServiceSplit = () => {
           <ul className="space-y-4 mb-4">
             <li className="flex items-center gap-3">
               <span className="material-symbols-outlined text-primary text-sm">check_circle</span> 
-              24/7 licensed staff
+              24/7 Certified and Licensed Staff
             </li>
             <li className="flex items-center gap-3">
               <span className="material-symbols-outlined text-primary text-sm">check_circle</span> 
-              In-House Registered RN
+              Licensed RN
             </li>
             <li className="flex items-center gap-3">
               <span className="material-symbols-outlined text-primary text-sm">check_circle</span> 
-              In-house Massages (additional cost)
+              In-House Massages
             </li>
             <li className="flex items-center gap-3">
               <span className="material-symbols-outlined text-primary text-sm">check_circle</span> 
@@ -39,11 +38,11 @@ const ServiceSplit = () => {
             </li>
             <li className="flex items-center gap-3">
               <span className="material-symbols-outlined text-primary text-sm">check_circle</span> 
-              Transportation-Surgery date Roundtrip
+              1-Roundtrip Surgery Date Transportation
             </li>
             <li className="flex items-center gap-3">
               <span className="material-symbols-outlined text-primary text-sm">check_circle</span> 
-              1 postoperative appointment roundtrip
+              1-Postoperative Roundtrip Appointment
             </li>
             <li className="flex items-center gap-3">
               <span className="material-symbols-outlined text-primary text-sm">check_circle</span> 
@@ -51,7 +50,7 @@ const ServiceSplit = () => {
             </li>
           </ul>
           <div className="bg-primary/5 p-4 rounded-xl border border-primary/10">
-            <p className="text-sm font-semibold text-primary mb-1">4 night minimum • $275 / night</p>
+            <p className="text-sm font-semibold text-primary mb-1">Minimum 4 Nights • $300 / night</p>
             <p className="text-xs text-on-surface-variant">Payment Methods: Cash App, Apple Pay, or Zelle</p>
             <p className="text-xs text-on-surface-variant mt-2 italic">* Note: We do not offer Miami Airport arrival pick-up.</p>
           </div>
@@ -63,7 +62,6 @@ const ServiceSplit = () => {
             <div className="p-4 bg-secondary-container rounded-2xl">
               <span className="material-symbols-outlined text-secondary text-3xl">home_health</span>
             </div>
-            <span className="text-secondary font-semibold tracking-widest text-xs uppercase">Option 2</span>
           </div>
           <h3 className="font-headline text-3xl mb-4 italic">Mobile Care Concierge</h3>
           <p className="text-on-surface-variant mb-8">
@@ -89,6 +87,10 @@ const ServiceSplit = () => {
             <li className="flex items-center gap-3">
               <span className="material-symbols-outlined text-secondary text-sm">check_circle</span> 
               Surgery pick up Miami area only
+            </li>
+            <li className="flex items-center gap-3">
+              <span className="material-symbols-outlined text-secondary text-sm">check_circle</span> 
+              1 free post surgical massage
             </li>
           </ul>
           <div className="bg-secondary/5 p-4 rounded-xl border border-secondary/10">
