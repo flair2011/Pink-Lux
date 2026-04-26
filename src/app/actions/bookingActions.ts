@@ -3,6 +3,7 @@
 import { db } from "@/lib/firebase/admin";
 import { bookingFormSchema, BookingFormData } from "@/lib/schema/booking";
 import * as admin from 'firebase-admin';
+import { notifyOwnerOfNewBooking, notifyUserOfPendingDeposit } from "@/app/actions/emailActions";
 
 export async function createBooking(data: BookingFormData) {
   if (!db) {
@@ -31,6 +32,20 @@ export async function createBooking(data: BookingFormData) {
 
     // 4. Write securely to Firestore using Admin SDK
     await db.collection("bookings").add(newDoc);
+
+    // 5. Send Notification Emails
+    await Promise.all([
+      notifyOwnerOfNewBooking(
+        validatedData.clientInfo.fullName,
+        referenceCode,
+        validatedData.medicalInfo.surgeryDate
+      ),
+      notifyUserOfPendingDeposit(
+        validatedData.clientInfo.email,
+        validatedData.clientInfo.fullName,
+        referenceCode
+      )
+    ]);
 
     return { success: true, referenceCode };
   } catch (error: any) {
