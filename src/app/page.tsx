@@ -4,6 +4,7 @@ import ServiceSplit from "@/components/ServiceSplit";
 import TrustSection from "@/components/TrustSection";
 import Experience from "@/components/Experience";
 import PackageSection from "@/components/PackageSection";
+import MassageSection from "@/components/MassageSection";
 import ConciergeGrid from "@/components/ConciergeGrid";
 import BookingSection from "@/components/BookingSection";
 import FAQ from "@/components/FAQ";
@@ -19,6 +20,7 @@ export default function Home() {
       <TrustSection />
       <Experience />
       <PackageSection />
+      <MassageSection />
       <ConciergeGrid />
       <BookingSection />
       <FAQ />
