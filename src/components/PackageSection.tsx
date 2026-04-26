@@ -39,8 +39,11 @@ const PackageSection = () => {
             </div>
           </div>
           <div className="bg-primary/5 p-6 rounded-2xl mb-12">
-            <p className="text-sm italic text-primary">"Extended stay options are available upon request for those requiring additional healing time."</p>
+            <p className="text-sm italic text-primary">&quot;Extended stay options are available upon request for those requiring additional healing time.&quot;</p>
           </div>
+          <p className="text-on-surface-variant max-w-2xl mx-auto italic text-lg opacity-80 mt-2 mb-12">
+            Every recovery is unique. Don&apos;t see what you need? Inquire about our &quot;Bespoke Care&quot; tier—custom tailored nursing support at any hour.
+          </p>
           <a
             className="inline-block bg-primary text-on-primary px-12 py-5 rounded-full font-bold text-lg hover:opacity-90 transition-all"
             href="#booking"
