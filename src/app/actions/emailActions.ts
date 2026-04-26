@@ -107,8 +107,8 @@ export async function notifyUserOfPendingDeposit(userEmail: string, fullName: st
 
         <h3>Payment Methods</h3>
         <ul>
-          <li><strong>Cash App:</strong> $PinkLuxMiami</li>
-          <li><strong>Zelle:</strong> pinklux305@gmail.com</li>
+          <li><strong>Cash App:</strong> $Crown973</li>
+          <li><strong>Zelle:</strong> 786-566-5508</li>
         </ul>
 
         <p>Once you make the deposit, our team will verify it and send your final confirmation.</p>
