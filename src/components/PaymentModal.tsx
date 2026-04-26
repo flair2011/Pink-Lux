@@ -3,6 +3,7 @@
 import React, { useState } from "react";
 import { Copy, Check, Info } from "lucide-react";
 import { BUSINESS_CONFIG } from "@/config/business";
+import { notifyOwnerOfDeposit } from "@/app/actions/emailActions";
 
 export default function PaymentModal({ 
   isOpen, 
@@ -14,6 +15,7 @@ export default function PaymentModal({
   referenceCode: string; 
 }) {
   const [copiedApp, setCopiedApp] = useState<"cashapp" | "zelle" | null>(null);
+  const [isNotifying, setIsNotifying] = useState(false);
 
   if (!isOpen) return null;
 
@@ -86,6 +88,24 @@ export default function PaymentModal({
             </button>
           </div>
         </div>
+
+        <button
+          onClick={async () => {
+            setIsNotifying(true);
+            await notifyOwnerOfDeposit(referenceCode);
+            setIsNotifying(false);
+            onClose();
+          }}
+          disabled={isNotifying}
+          className="mt-8 w-full bg-primary text-on-primary font-semibold py-4 rounded-xl hover:bg-primary/90 transition-colors disabled:opacity-70 disabled:cursor-not-allowed flex items-center justify-center gap-2"
+        >
+          {isNotifying ? (
+            <div className="w-5 h-5 border-2 border-on-primary/30 border-t-on-primary rounded-full animate-spin" />
+          ) : (
+            <Check className="w-5 h-5" />
+          )}
+          {isNotifying ? "Notifying..." : "I have made my deposit"}
+        </button>
 
       </div>
     </div>

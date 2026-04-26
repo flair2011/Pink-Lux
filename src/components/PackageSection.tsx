@@ -48,7 +48,7 @@ const PackageSection = () => {
             className="inline-block bg-primary text-on-primary px-12 py-5 rounded-full font-bold text-lg hover:opacity-90 transition-all"
             href="#booking"
           >
-            Check Availability
+            Reserve your stay
           </a>
         </div>
       </div>

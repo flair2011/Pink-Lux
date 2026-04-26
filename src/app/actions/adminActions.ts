@@ -3,6 +3,7 @@
 import { db, auth } from "@/lib/firebase/admin";
 import { cookies } from "next/headers";
 import * as admin from 'firebase-admin';
+import { notifyUserOfVerification } from "@/app/actions/emailActions";
 
 export async function createSession(idToken: string) {
   if (!auth) return { success: false, error: "Firebase Admin is not configured" };
@@ -33,10 +34,27 @@ export async function verifyDeposit(documentId: string) {
   if (!db) return { success: false, error: "Firebase DB missing" };
 
   try {
-    await db.collection("bookings").doc(documentId).update({
+    const bookingRef = db.collection("bookings").doc(documentId);
+    const bookingDoc = await bookingRef.get();
+
+    if (!bookingDoc.exists) {
+      return { success: false, error: "Booking not found" };
+    }
+
+    const data = bookingDoc.data();
+
+    await bookingRef.update({
       status: "Deposit Verified",
       updatedAt: admin.firestore.FieldValue.serverTimestamp(),
     });
+
+    if (data?.clientInfo?.email && data?.referenceCode) {
+      await notifyUserOfVerification(
+        data.clientInfo.email,
+        data.clientInfo.fullName || 'Guest',
+        data.referenceCode
+      );
+    }
 
     return { success: true };
   } catch (error) {
