@@ -5,6 +5,13 @@ import ThemeProvider from "@/components/ThemeProvider";
 export const metadata: Metadata = {
   title: "Pink Lux Concierge | Luxury Post-Op Stays Miami",
   description: "Bespoke post-operative support in the heart of Miami. Experience the intersection of clinical excellence and quiet luxury.",
+  icons: {
+    icon: [
+      { url: "/favicon-32x32.png", sizes: "32x32", type: "image/png" },
+      { url: "/icon-192.png", sizes: "192x192", type: "image/png" },
+    ],
+    apple: "/apple-touch-icon.png",
+  },
 };
 
 export default function RootLayout({
