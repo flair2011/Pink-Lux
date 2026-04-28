@@ -32,7 +32,7 @@ export default function BookingSection() {
     notes: ""
   });
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>) => {
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement> | { target: { name: string; value: string } }) => {
     setFormData(prev => ({
       ...prev,
       [e.target.name]: e.target.value
