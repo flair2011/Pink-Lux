@@ -14,7 +14,7 @@ const CTASection = () => {
         </a>
         <a 
           href="#booking"
-          className="bg-white text-primary px-12 py-5 rounded-full font-bold border border-primary/10 hover:bg-primary/5 transition-all"
+          className="bg-surface text-primary px-12 py-5 rounded-full font-bold border border-primary/10 hover:bg-primary/5 transition-all"
         >
           Book Mobile Care
         </a>

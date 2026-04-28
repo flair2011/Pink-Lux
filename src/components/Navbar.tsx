@@ -1,16 +1,17 @@
 "use client";
 
 import React from "react";
+import ThemeToggle from "./ThemeToggle";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = React.useState(false);
 
   return (
     <>
-      <nav className="fixed top-0 w-full z-40 bg-background/70 backdrop-blur-xl shadow-editorial">
+      <nav className="fixed top-0 w-full z-40 glass-nav">
         <div className="flex justify-between items-center w-full px-6 py-4 max-w-7xl mx-auto">
           <div className="flex items-center gap-2">
-            <img src="/pinkluxconcierge-logo.jpeg" alt="Pink Lux Concierge" className="h-14 md:h-20 w-auto object-contain rounded-md" />
+            <img src="/pinkluxconcierge-logo.jpeg" alt="Pink Lux Concierge" className="h-14 md:h-20 w-14 md:w-20 object-cover rounded-full" />
           </div>
           
           {/* Desktop Navigation */}
@@ -18,32 +19,39 @@ const Navbar = () => {
             <a href="#services" className="text-sm font-medium text-on-surface-variant hover:text-primary transition-colors">Services</a>
             <a href="#experience" className="text-sm font-medium text-on-surface-variant hover:text-primary transition-colors">Experience</a>
             <a href="#faq" className="text-sm font-medium text-on-surface-variant hover:text-primary transition-colors">FAQs</a>
-            <button className="bg-primary text-on-primary px-6 py-2 rounded-full font-medium text-sm hover:opacity-80 transition-opacity active:scale-95 duration-200">
+            <div className="flex items-center">
+              <ThemeToggle />
+            </div>
+            <a href="#booking" className="bg-primary text-on-primary px-6 py-2 rounded-full font-medium text-sm hover:opacity-80 transition-opacity active:scale-95 duration-200">
               Reserve Your Stay
-            </button>
+            </a>
           </div>
 
           {/* Mobile menu button */}
-          <button 
-            className="md:hidden text-primary p-2"
-            onClick={() => setIsOpen(true)}
-            aria-label="Open menu"
-          >
-            <span className="material-symbols-outlined">menu</span>
-          </button>
+          <div className="md:hidden flex items-center gap-2">
+            <ThemeToggle />
+            <button 
+              className="text-primary p-2"
+              onClick={() => setIsOpen(true)}
+              aria-label="Open menu"
+            >
+              <span className="material-symbols-outlined">menu</span>
+            </button>
+          </div>
         </div>
       </nav>
 
       {/* Independent Mobile menu overlay */}
       <div 
-        className={`fixed inset-0 bg-background/80 backdrop-blur-xl z-50 md:hidden transition-transform duration-300 ease-in-out ${
+        className={`fixed inset-0 z-50 md:hidden transition-transform duration-300 ease-in-out ${
           isOpen ? "translate-x-0" : "translate-x-full"
         }`}
+        style={{ background: "var(--glass-bg)", backdropFilter: "blur(30px)" }}
       >
         {/* Mobile Header (Inside Overlay) */}
         <div className="flex justify-between items-center w-full px-6 py-4 border-b border-primary/10">
           <div className="flex items-center gap-2">
-            <img src="/pinkluxconcierge-logo.jpeg" alt="Pink Lux Concierge" className="h-16 w-auto object-contain rounded-md" />
+            <img src="/pinkluxconcierge-logo.jpeg" alt="Pink Lux Concierge" className="h-16 w-16 object-cover rounded-full" />
           </div>
           <button 
             className="text-primary p-2"
@@ -78,12 +86,13 @@ const Navbar = () => {
             FAQs
           </a>
           <div className="w-16 h-[1px] bg-primary/20 my-6 shrink-0" />
-          <button 
-            className="bg-primary text-on-primary px-12 py-5 rounded-full font-bold editorial-shadow active:scale-95 transition-all text-xl shrink-0"
+          <a 
+            href="#booking"
+            className="bg-primary text-on-primary px-12 py-5 rounded-full font-bold editorial-shadow active:scale-95 transition-all text-xl shrink-0 text-center"
             onClick={() => setIsOpen(false)}
           >
             Reserve Your Stay
-          </button>
+          </a>
         </div>
       </div>
     </>

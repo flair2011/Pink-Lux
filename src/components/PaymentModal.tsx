@@ -45,7 +45,7 @@ export default function PaymentModal({
         </div>
 
         <p className="text-on-surface-variant mb-6">
-          Your booking request has been securely received. To verify and confirm your dates, a deposit is required. 
+          Your booking request has been securely received. To verify and confirm your dates, a $250 deposit is required. 
         </p>
 
         <div className="bg-primary/5 border border-primary/20 rounded-xl p-6 text-center mb-6">

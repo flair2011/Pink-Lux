@@ -50,7 +50,7 @@ const ServiceSplit = () => {
             </li>
           </ul>
           <div className="bg-primary/5 p-4 rounded-xl border border-primary/10">
-            <p className="text-sm font-semibold text-primary mb-1">Minimum 4 Nights • $300 / night</p>
+            <p className="text-sm font-semibold text-primary mb-1">Minimum 4 Nights • $325 / night</p>
             <p className="text-xs text-on-surface-variant">Payment Methods: Cash App, Apple Pay, or Zelle</p>
             <p className="text-xs text-on-surface-variant mt-2 italic">* Note: We do not offer Miami Airport arrival pick-up.</p>
           </div>
@@ -94,7 +94,7 @@ const ServiceSplit = () => {
             </li>
           </ul>
           <div className="bg-secondary/5 p-4 rounded-xl border border-secondary/10">
-            <p className="text-sm font-semibold text-secondary mb-1">$350 for 2 hour post surgery each</p>
+            <p className="text-sm font-semibold text-secondary mb-1">$350 for 3 hour post surgery each</p>
             <p className="text-sm font-semibold text-secondary">$150 additional hour</p>
           </div>
         </div>

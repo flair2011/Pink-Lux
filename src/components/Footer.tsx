@@ -1,4 +1,5 @@
 import React from "react";
+import Link from "next/link";
 
 const Footer = () => {
   return (
@@ -12,7 +13,7 @@ const Footer = () => {
 
       <div className="grid grid-cols-1 md:grid-cols-4 gap-12 px-8 max-w-7xl mx-auto">
         <div className="space-y-4">
-          <img src="/pinkluxconcierge-logo.jpeg" alt="Pink Lux Concierge Logo" className="h-24 w-auto object-contain rounded-md" />
+          <img src="/pinkluxconcierge-logo.jpeg" alt="Pink Lux Concierge Logo" className="h-24 w-24 object-cover rounded-full" />
           <p className="text-sm opacity-70">Elevating the standards of post-operative short term stays in Miami.</p>
         </div>
         <div className="flex flex-col gap-4">
@@ -24,8 +25,8 @@ const Footer = () => {
         <div className="flex flex-col gap-4">
           <h5 className="font-bold text-xs uppercase tracking-widest text-secondary">Support</h5>
           <a className="text-sm opacity-70 hover:text-primary transition-colors" href="#faq">FAQs</a>
-          <a className="text-sm opacity-70 hover:text-primary transition-colors" href="mailto:hello@pinkluxmiami.com">Contact Us</a>
-          <a className="text-sm opacity-70 hover:text-primary transition-colors" href="#">Privacy Policy</a>
+          <a className="text-sm opacity-70 hover:text-primary transition-colors" href="mailto:pinklux305@gmail.com">Contact Us</a>
+          <Link className="text-sm opacity-70 hover:text-primary transition-colors" href="/privacy">Privacy Policy</Link>
         </div>
         <div className="flex flex-col gap-4">
           <h5 className="font-bold text-xs uppercase tracking-widest text-secondary">Contact</h5>

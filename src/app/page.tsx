@@ -5,7 +5,6 @@ import TrustSection from "@/components/TrustSection";
 import Experience from "@/components/Experience";
 import PackageSection from "@/components/PackageSection";
 import MassageSection from "@/components/MassageSection";
-import ConciergeGrid from "@/components/ConciergeGrid";
 import BookingSection from "@/components/BookingSection";
 import FAQ from "@/components/FAQ";
 import CTASection from "@/components/CTASection";
@@ -21,7 +20,6 @@ export default function Home() {
       <Experience />
       <PackageSection />
       <MassageSection />
-      <ConciergeGrid />
       <BookingSection />
       <FAQ />
       <CTASection />

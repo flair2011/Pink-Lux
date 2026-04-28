@@ -3,6 +3,8 @@
 import React, { useState } from "react";
 import { createBooking } from "@/app/actions/bookingActions";
 import PaymentModal from "./PaymentModal";
+import PremiumDatePicker from "./PremiumDatePicker";
+import PremiumSelect from "./PremiumSelect";
 import { Loader2 } from "lucide-react";
 
 export default function BookingSection() {
@@ -120,7 +122,7 @@ export default function BookingSection() {
           
           <form className="p-8 md:p-12 space-y-6" onSubmit={handleSubmit}>
             {errorMsg && (
-                <div className="p-4 bg-red-50 text-red-600 rounded-xl border border-red-100 text-sm font-medium">
+                <div className="p-4 bg-error-container text-on-error-container rounded-xl border border-error/20 text-sm font-medium">
                     {errorMsg}
                 </div>
             )}
@@ -182,29 +184,27 @@ export default function BookingSection() {
             <div className="grid md:grid-cols-2 gap-6">
               <div>
                 <label className="block text-sm font-semibold mb-2 ml-1">Surgery Date</label>
-                <input
+                <PremiumDatePicker
                   name="surgeryDate"
                   value={formData.surgeryDate}
                   onChange={handleChange}
                   required
-                  className="w-full bg-surface-container-low border-none rounded-xl p-4 focus:ring-2 focus:ring-primary/20 outline-none"
-                  type="date"
                 />
               </div>
               <div>
                 <label className="block text-sm font-semibold mb-2 ml-1">Surgery Type</label>
-                <select 
-                    name="surgeryType"
-                    value={formData.surgeryType}
-                    onChange={handleChange}
-                    className="w-full bg-surface-container-low border-none rounded-xl p-4 focus:ring-2 focus:ring-primary/20 outline-none appearance-none"
-                >
-                  <option value="BBL / Liposuction">BBL / Liposuction</option>
-                  <option value="Tummy Tuck (Abdominoplasty)">Tummy Tuck (Abdominoplasty)</option>
-                  <option value="Breast Augmentation/Lift">Breast Augmentation/Lift</option>
-                  <option value="Mummy Makeover">Mummy Makeover</option>
-                  <option value="Other Procedure">Other Procedure</option>
-                </select>
+                <PremiumSelect
+                  name="surgeryType"
+                  value={formData.surgeryType}
+                  onChange={handleChange}
+                  options={[
+                    { label: "BBL / Liposuction", value: "BBL / Liposuction" },
+                    { label: "Tummy Tuck (Abdominoplasty)", value: "Tummy Tuck (Abdominoplasty)" },
+                    { label: "Breast Augmentation/Lift", value: "Breast Augmentation/Lift" },
+                    { label: "Mummy Makeover", value: "Mummy Makeover" },
+                    { label: "Other Procedure", value: "Other Procedure" },
+                  ]}
+                />
               </div>
             </div>
 
@@ -263,7 +263,7 @@ export default function BookingSection() {
             <div className="flex items-center gap-4 p-4 rounded-xl bg-secondary-container/10 border border-secondary/20">
               <span className="material-symbols-outlined text-secondary">payments</span>
               <p className="text-xs text-secondary font-medium leading-tight">
-                Secure your dates with a deposit via Zelle or Cash App. Final balance due upon arrival.
+                Secure your dates with a $250 deposit via Zelle or Cash App. Final balance due upon arrival.
               </p>
             </div>
 
