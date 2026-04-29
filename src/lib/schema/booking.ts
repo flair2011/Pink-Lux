@@ -12,11 +12,13 @@ export const medicalInfoSchema = z.object({
   surgeryType: z.string().min(2, "Surgery type is required"),
   surgeon: z.string().min(2, "Dr. / Surgeon name is required"),
   facility: z.string().min(2, "Facility is required"),
+  serviceAddress: z.string().optional(),
   allergies: z.string().optional(),
   notes: z.string().optional(),
 });
 
 export const bookingFormSchema = z.object({
+  serviceType: z.string().min(1, "Service type is required"),
   clientInfo: clientInfoSchema,
   medicalInfo: medicalInfoSchema,
 });

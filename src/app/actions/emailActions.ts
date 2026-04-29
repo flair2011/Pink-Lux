@@ -58,7 +58,7 @@ export async function notifyUserOfVerification(userEmail: string, fullName: stri
   }
 }
 
-export async function notifyOwnerOfNewBooking(clientName: string, referenceCode: string, requestedDate: string) {
+export async function notifyOwnerOfNewBooking(clientName: string, referenceCode: string, requestedDate: string, serviceType: string = "Standard", serviceAddress?: string) {
   if (!resend) {
     console.warn("RESEND_API_KEY is not set. Email notification mocked.");
     return { success: true, mocked: true };
@@ -71,7 +71,8 @@ export async function notifyOwnerOfNewBooking(clientName: string, referenceCode:
       subject: `🚨 NEW BOOKING REQUEST - ${clientName} (${referenceCode})`,
       html: `<div style="font-family: sans-serif; p-4;">
         <h2 style="color: #ff2a70;">New Lead Awaiting Deposit!</h2>
-        <p><strong>${clientName}</strong> has just submitted a booking request for <strong>${requestedDate}</strong>.</p>
+        <p><strong>${clientName}</strong> has just submitted a <strong>${serviceType}</strong> booking request for <strong>${requestedDate}</strong>.</p>
+        ${serviceAddress ? `<p><strong>Service Address:</strong> ${serviceAddress}</p>` : ''}
         <p>Their reference code is: <strong style="font-size: 1.2rem;">${referenceCode}</strong></p>
         <p>They have been prompted to pay via Cash App or Zelle. Keep an eye out for this reference code in your incoming payments!</p>
       </div>`
@@ -83,7 +84,7 @@ export async function notifyOwnerOfNewBooking(clientName: string, referenceCode:
   }
 }
 
-export async function notifyUserOfPendingDeposit(userEmail: string, fullName: string, referenceCode: string) {
+export async function notifyUserOfPendingDeposit(userEmail: string, fullName: string, referenceCode: string, serviceType: string = "Standard") {
   if (!resend) {
     console.warn("RESEND_API_KEY is not set. Email notification mocked.");
     return { success: true, mocked: true };
@@ -97,7 +98,7 @@ export async function notifyUserOfPendingDeposit(userEmail: string, fullName: st
       html: `<div style="font-family: sans-serif; p-4;">
         <h2 style="color: #ff2a70;">We've received your request!</h2>
         <p>Hi ${fullName},</p>
-        <p>Thank you for choosing Pink Lux Concierge! We have securely received your booking request.</p>
+        <p>Thank you for choosing Pink Lux Concierge! We have securely received your <strong>${serviceType}</strong> request.</p>
         <p>To verify and confirm your dates, a deposit is required. Please make your deposit using one of the methods below:</p>
         
         <div style="background-color: #f7f7f7; padding: 15px; border-radius: 8px; margin: 20px 0;">

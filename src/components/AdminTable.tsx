@@ -66,8 +66,11 @@ export default function AdminTable({ bookings }: { bookings: any[] }) {
                     {b.medicalInfo.surgeryDate}
                 </div>
                 
-                <div>
-                  <span className={`inline-flex items-center px-3 py-1 rounded-full text-xs font-bold ${
+                <div className="flex flex-col md:flex-row md:flex-wrap items-start gap-2">
+                  <span className="inline-flex items-center px-3 py-1 bg-surface-container-high rounded-full text-xs font-bold text-on-surface-variant whitespace-nowrap">
+                    {b.serviceType || 'Short Term Stay'}
+                  </span>
+                  <span className={`inline-flex items-center px-3 py-1 rounded-full text-xs font-bold whitespace-nowrap ${
                     isVerified ? "bg-green-100 text-green-700" : "bg-orange-100 text-orange-700"
                   }`}>
                     {b.status}
@@ -107,6 +110,9 @@ export default function AdminTable({ bookings }: { bookings: any[] }) {
                     <p><span className="text-on-surface-variant mr-2">Date:</span> {b.medicalInfo.surgeryDate}</p>
                     <p><span className="text-on-surface-variant mr-2">Surgeon:</span> {b.medicalInfo.surgeon}</p>
                     <p><span className="text-on-surface-variant mr-2">Facility:</span> {b.medicalInfo.facility}</p>
+                    {b.medicalInfo.serviceAddress && (
+                      <p><span className="text-on-surface-variant mr-2">Service Address:</span> {b.medicalInfo.serviceAddress}</p>
+                    )}
                     <p><span className="text-on-surface-variant mr-2">Allergies:</span> {b.medicalInfo.allergies || 'N/A'}</p>
                     <p><span className="text-on-surface-variant mr-2">Notes:</span> {b.medicalInfo.notes || 'N/A'}</p>
                   </div>

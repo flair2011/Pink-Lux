@@ -28,6 +28,7 @@ export default function BookingSection() {
     surgeryType: "BBL / Liposuction",
     surgeon: "",
     facility: "",
+    serviceAddress: "",
     allergies: "",
     notes: ""
   });
@@ -46,6 +47,7 @@ export default function BookingSection() {
 
     // Map state to Zod schema structure
     const payload = {
+      serviceType: activeTab === "short-term-stay" ? "Short Term Stay" : "Mobile Care",
       clientInfo: {
         fullName: formData.fullName,
         email: formData.email,
@@ -57,6 +59,7 @@ export default function BookingSection() {
         surgeryType: formData.surgeryType,
         surgeon: formData.surgeon,
         facility: formData.facility,
+        serviceAddress: formData.serviceAddress,
         allergies: formData.allergies,
         notes: formData.notes,
       }
@@ -71,7 +74,7 @@ export default function BookingSection() {
         // We can optionally clear the form here
         setFormData({
             fullName: "", email: "", phone: "", emergencyContact: "",
-            surgeryDate: "", surgeryType: "BBL / Liposuction", surgeon: "", facility: "", allergies: "", notes: ""
+            surgeryDate: "", surgeryType: "BBL / Liposuction", surgeon: "", facility: "", serviceAddress: "", allergies: "", notes: ""
         });
       } else {
         setErrorMsg(response.error || "Failed to create booking.");
@@ -234,6 +237,23 @@ export default function BookingSection() {
                 />
               </div>
             </div>
+
+            {activeTab === "mobile-care" && (
+              <div className="grid md:grid-cols-1 gap-6">
+                <div>
+                  <label className="block text-sm font-semibold mb-2 ml-1">Service Address (Hotel / Airbnb / Home)</label>
+                  <input
+                    name="serviceAddress"
+                    value={formData.serviceAddress}
+                    onChange={handleChange}
+                    required={activeTab === "mobile-care"}
+                    className="w-full bg-surface-container-low border-none rounded-xl p-4 focus:ring-2 focus:ring-primary/20 outline-none"
+                    placeholder="Provide full address where care will be given"
+                    type="text"
+                  />
+                </div>
+              </div>
+            )}
 
             <div className="grid md:grid-cols-2 gap-6">
               <div>

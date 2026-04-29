@@ -24,6 +24,7 @@ export async function createBooking(data: BookingFormData) {
     // 3. Prepare the Firestore document
     const newDoc = {
       referenceCode,
+      serviceType: validatedData.serviceType,
       status: "Pending Deposit",
       clientInfo: validatedData.clientInfo,
       medicalInfo: validatedData.medicalInfo,
@@ -38,12 +39,15 @@ export async function createBooking(data: BookingFormData) {
       notifyOwnerOfNewBooking(
         validatedData.clientInfo.fullName,
         referenceCode,
-        validatedData.medicalInfo.surgeryDate
+        validatedData.medicalInfo.surgeryDate,
+        validatedData.serviceType,
+        validatedData.medicalInfo.serviceAddress
       ),
       notifyUserOfPendingDeposit(
         validatedData.clientInfo.email,
         validatedData.clientInfo.fullName,
-        referenceCode
+        referenceCode,
+        validatedData.serviceType
       )
     ]);
 
