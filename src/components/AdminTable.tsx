@@ -50,14 +50,22 @@ export default function AdminTable({ bookings }: { bookings: any[] }) {
           return (
             <div key={b.id} className="transition-colors hover:bg-surface-container-low/50">
               <div 
-                className="p-6 grid grid-cols-1 md:grid-cols-5 gap-4 md:gap-0 items-center cursor-pointer"
+                className="p-5 md:p-6 flex flex-col md:grid md:grid-cols-5 gap-3 md:gap-0 items-start md:items-center cursor-pointer"
                 onClick={() => setExpandedId(isExpanded ? null : b.id)}
               >
-                <div className="font-mono text-primary font-bold">{b.referenceCode}</div>
+                <div className="w-full md:w-auto flex justify-between items-center">
+                  <div className="font-mono text-primary font-bold">{b.referenceCode}</div>
+                  <div className="md:hidden">
+                    {isExpanded ? <ChevronUp className="text-outline" /> : <ChevronDown className="text-outline" />}
+                  </div>
+                </div>
+                
                 <div className="font-medium text-lg md:text-base">{b.clientInfo.fullName}</div>
-                <div className="text-on-surface-variant flex items-center gap-2">
+                
+                <div className="text-on-surface-variant flex items-center gap-2 text-sm md:text-base">
                     {b.medicalInfo.surgeryDate}
                 </div>
+                
                 <div>
                   <span className={`inline-flex items-center px-3 py-1 rounded-full text-xs font-bold ${
                     isVerified ? "bg-green-100 text-green-700" : "bg-orange-100 text-orange-700"
@@ -65,18 +73,21 @@ export default function AdminTable({ bookings }: { bookings: any[] }) {
                     {b.status}
                   </span>
                 </div>
-                <div className="flex items-center justify-end gap-4">
+                
+                <div className="w-full md:w-auto mt-2 md:mt-0 flex items-center justify-end gap-4">
                   {!isVerified && (
                     <button
                       onClick={(e) => { e.stopPropagation(); handleVerify(b.id); }}
                       disabled={processingId === b.id}
-                      className="px-4 py-2 bg-primary text-on-primary text-sm font-bold rounded-lg hover:opacity-90 transition disabled:opacity-50 flex items-center gap-2"
+                      className="w-full md:w-auto px-4 py-2 bg-primary text-on-primary text-sm font-bold rounded-lg hover:opacity-90 transition disabled:opacity-50 flex items-center justify-center gap-2"
                     >
                       {processingId === b.id ? <Loader2 className="w-4 h-4 animate-spin" /> : <CheckCircle className="w-4 h-4" />}
                       Verify Deposit
                     </button>
                   )}
-                  {isExpanded ? <ChevronUp className="text-outline" /> : <ChevronDown className="text-outline" />}
+                  <div className="hidden md:block">
+                    {isExpanded ? <ChevronUp className="text-outline" /> : <ChevronDown className="text-outline" />}
+                  </div>
                 </div>
               </div>
 
