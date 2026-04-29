@@ -216,7 +216,7 @@ export default function PrivacyPolicy() {
                   Email: <a href="mailto:pinklux305@gmail.com" className="text-primary hover:underline">pinklux305@gmail.com</a>
                 </p>
                 <p className="text-on-surface-variant">
-                  Phone: <a href="tel:+15857309068" className="text-primary hover:underline">+1 (585) 730-9068</a>
+                  Phone: <a href="tel:+17865665508" className="text-primary hover:underline">+1 (585) 730-9068</a>
                 </p>
               </div>
             </div>
