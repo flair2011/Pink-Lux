@@ -9,13 +9,13 @@ export default function ThemeToggle({ className = "" }: { className?: string }) 
   return (
     <button
       onClick={toggleTheme}
-      className={`relative p-2 rounded-full transition-all duration-300 hover:bg-primary/10 active:scale-90 ${className}`}
+      className={`relative w-7 h-7 flex items-center justify-center rounded-full transition-all duration-300 hover:bg-primary/20 active:scale-90 ${className}`}
       aria-label={`Switch to ${theme === "light" ? "dark" : "light"} mode`}
       title={`Switch to ${theme === "light" ? "dark" : "light"} mode`}
     >
       {/* Sun icon */}
       <span
-        className={`material-symbols-outlined text-xl theme-toggle-icon absolute inset-0 flex items-center justify-center ${
+        className={`material-symbols-outlined text-[20px] leading-none theme-toggle-icon absolute inset-0 flex items-center justify-center ${
           theme === "light"
             ? "opacity-100 rotate-0"
             : "opacity-0 -rotate-90"
@@ -27,7 +27,7 @@ export default function ThemeToggle({ className = "" }: { className?: string }) 
 
       {/* Moon icon */}
       <span
-        className={`material-symbols-outlined text-xl theme-toggle-icon ${
+        className={`material-symbols-outlined text-[20px] leading-none theme-toggle-icon absolute inset-0 flex items-center justify-center ${
           theme === "dark"
             ? "opacity-100 rotate-0"
             : "opacity-0 rotate-90"
