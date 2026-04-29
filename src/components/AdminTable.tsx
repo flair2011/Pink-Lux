@@ -1,11 +1,13 @@
 "use client";
 
 import React, { useState } from 'react';
+import { useRouter } from 'next/navigation';
 import { verifyDeposit } from '@/app/actions/adminActions';
 import { ChevronDown, ChevronUp, CheckCircle, Loader2 } from 'lucide-react';
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 export default function AdminTable({ bookings }: { bookings: any[] }) {
+  const router = useRouter();
   const [expandedId, setExpandedId] = useState<string | null>(null);
   const [processingId, setProcessingId] = useState<string | null>(null);
 
@@ -13,7 +15,7 @@ export default function AdminTable({ bookings }: { bookings: any[] }) {
     setProcessingId(id);
     const res = await verifyDeposit(id);
     if (res.success) {
-      window.location.reload(); // Simple refresh to pick up new Server state
+      router.refresh(); // Soft refresh to pick up new Server state
     } else {
       alert(res.error);
     }

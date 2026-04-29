@@ -1,3 +1,5 @@
+export const dynamic = "force-dynamic";
+
 import { db } from "@/lib/firebase/admin";
 import AdminTable from "@/components/AdminTable";
 
