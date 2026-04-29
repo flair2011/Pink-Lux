@@ -1,5 +1,6 @@
 import React from "react";
 import Link from "next/link";
+import { Facebook, Instagram } from "@/components/Icons";
 
 const Footer = () => {
   return (
@@ -11,7 +12,7 @@ const Footer = () => {
         </p>
       </div>
 
-      <div className="grid grid-cols-1 md:grid-cols-4 gap-12 px-8 max-w-7xl mx-auto">
+      <div className="grid grid-cols-1 md:grid-cols-5 gap-12 px-8 max-w-7xl mx-auto">
         <div className="space-y-4">
           <img src="/pinkluxconcierge-logo.jpeg" alt="Pink Lux Concierge Logo" className="h-24 w-24 object-cover rounded-full" />
           <p className="text-sm opacity-70">Elevating the standards of post-operative short term stays in Miami.</p>
@@ -33,6 +34,17 @@ const Footer = () => {
           <p className="text-sm opacity-70">Miami, FL</p>
           <a className="text-sm opacity-70 hover:text-primary transition-colors block" href="tel:+17865665508">(786)-566-5508</a>
           <a className="text-sm opacity-70 hover:text-primary transition-colors block" href="mailto:pinklux305@gmail.com">pinklux305@gmail.com</a>
+        </div>
+        <div className="flex flex-col gap-4">
+          <h5 className="font-bold text-xs uppercase tracking-widest text-secondary">Socials</h5>
+          <div className="flex gap-4">
+            <a className="opacity-70 hover:opacity-100 hover:text-primary transition-all" href="https://instagram.com/pinklux_concierge" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+              <Instagram className="w-5 h-5" />
+            </a>
+            <a className="opacity-70 hover:opacity-100 hover:text-primary transition-all" href="https://facebook.com/theglamexperience109" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
+              <Facebook className="w-5 h-5" />
+            </a>
+          </div>
         </div>
       </div>
       <div className="mt-16 text-center px-8 space-y-2">

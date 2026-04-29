@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { Facebook, Instagram } from "@/components/Icons";
 
 export const metadata = {
   title: "Privacy Policy | Pink Lux Concierge",
@@ -218,6 +219,14 @@ export default function PrivacyPolicy() {
                 <p className="text-on-surface-variant">
                   Phone: <a href="tel:+17865665508" className="text-primary hover:underline">(786)-566-5508</a>
                 </p>
+                <div className="flex gap-4 pt-2">
+                  <a href="https://instagram.com/pinklux_concierge" target="_blank" rel="noopener noreferrer" className="text-on-surface-variant hover:text-primary transition-colors" aria-label="Instagram">
+                    <Instagram className="w-6 h-6" />
+                  </a>
+                  <a href="https://facebook.com/theglamexperience109" target="_blank" rel="noopener noreferrer" className="text-on-surface-variant hover:text-primary transition-colors" aria-label="Facebook">
+                    <Facebook className="w-6 h-6" />
+                  </a>
+                </div>
               </div>
             </div>
           </section>
