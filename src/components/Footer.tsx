@@ -31,7 +31,7 @@ const Footer = () => {
         <div className="flex flex-col gap-4">
           <h5 className="font-bold text-xs uppercase tracking-widest text-secondary">Contact</h5>
           <p className="text-sm opacity-70">Miami, FL</p>
-          <a className="text-sm opacity-70 hover:text-primary transition-colors block" href="tel:+17865665508">+1 585 730 9068</a>
+          <a className="text-sm opacity-70 hover:text-primary transition-colors block" href="tel:+17865665508">(786)-566-5508</a>
           <a className="text-sm opacity-70 hover:text-primary transition-colors block" href="mailto:pinklux305@gmail.com">pinklux305@gmail.com</a>
         </div>
       </div>
