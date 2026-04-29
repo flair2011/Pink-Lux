@@ -216,7 +216,7 @@ export default function PrivacyPolicy() {
                   Email: <a href="mailto:pinklux305@gmail.com" className="text-primary hover:underline">pinklux305@gmail.com</a>
                 </p>
                 <p className="text-on-surface-variant">
-                  Phone: <a href="tel:+17865665508" className="text-primary hover:underline">+1 (585) 730-9068</a>
+                  Phone: <a href="tel:+17865665508" className="text-primary hover:underline">(786)-566-5508</a>
                 </p>
               </div>
             </div>
@@ -226,8 +226,11 @@ export default function PrivacyPolicy() {
       </div>
 
       {/* Footer */}
-      <div className="border-t border-outline-variant/10 py-8 text-center">
+      <div className="border-t border-outline-variant/10 py-8 text-center space-y-2">
         <p className="text-xs text-on-surface-variant/50 uppercase tracking-tighter">© 2024 Pink Lux Concierge. Non-medical support services only.</p>
+        <p className="text-xs text-on-surface-variant/50 tracking-tighter">
+          Powered by <a href="https://alobam.dev" target="_blank" rel="noopener noreferrer" className="hover:text-primary transition-colors hover:underline">Alobam Dev Studio</a>
+        </p>
       </div>
     </main>
   );

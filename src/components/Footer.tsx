@@ -35,8 +35,11 @@ const Footer = () => {
           <a className="text-sm opacity-70 hover:text-primary transition-colors block" href="mailto:pinklux305@gmail.com">pinklux305@gmail.com</a>
         </div>
       </div>
-      <div className="mt-16 text-center px-8">
+      <div className="mt-16 text-center px-8 space-y-2">
         <p className="text-xs opacity-50 uppercase tracking-tighter">© 2024 Pink Lux Concierge. Non-medical support services only.</p>
+        <p className="text-xs opacity-50 tracking-tighter">
+          Powered by <a href="https://alobam.dev" target="_blank" rel="noopener noreferrer" className="hover:text-primary transition-colors hover:underline">Alobam Dev Studio</a>
+        </p>
       </div>
     </footer>
   );
