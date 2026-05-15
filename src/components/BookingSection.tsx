@@ -280,11 +280,12 @@ export default function BookingSection() {
               </div>
             </div>
             
-            <div className="flex items-center gap-4 p-4 rounded-xl bg-secondary-container/10 border border-secondary/20">
-              <span className="material-symbols-outlined text-secondary">payments</span>
-              <p className="text-xs text-secondary font-medium leading-tight">
-                Secure your dates with a $250 deposit via Zelle or Cash App. Final balance due upon arrival.
-              </p>
+            <div className="flex items-start gap-4 p-4 rounded-xl bg-secondary-container/10 border border-secondary/20">
+              <span className="material-symbols-outlined text-secondary mt-0.5">payments</span>
+              <div className="text-xs text-secondary font-medium leading-relaxed space-y-1">
+                <p>Secure your dates with a $250 deposit via Zelle or Cash App.</p>
+                <p className="font-bold uppercase tracking-wide text-primary/80">⚠ Deposits are non-refundable. All sales are final. Service balances are due 10 days prior to service rendered.</p>
+              </div>
             </div>
 
             <button

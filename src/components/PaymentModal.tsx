@@ -44,9 +44,16 @@ export default function PaymentModal({
           </button>
         </div>
 
-        <p className="text-on-surface-variant mb-6">
+        <p className="text-on-surface-variant mb-4">
           Your booking request has been securely received. To verify and confirm your dates, a $250 deposit is required. 
         </p>
+
+        <div className="flex items-start gap-3 p-4 rounded-xl bg-error-container/20 border border-error/20 mb-6">
+          <span className="material-symbols-outlined text-error text-base mt-0.5 shrink-0">warning</span>
+          <p className="text-xs text-error font-semibold leading-relaxed uppercase tracking-wide">
+            Deposits are non-refundable. All sales are final. Service balances are due 10 days prior to service rendered.
+          </p>
+        </div>
 
         <div className="bg-primary/5 border border-primary/20 rounded-xl p-6 text-center mb-6">
           <p className="text-sm text-primary font-semibold mb-2 uppercase tracking-widest">Your Reference Code</p>

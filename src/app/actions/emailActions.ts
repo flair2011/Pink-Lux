@@ -47,6 +47,11 @@ export async function notifyUserOfVerification(userEmail: string, fullName: stri
         <p>Hi ${fullName},</p>
         <p>Great news! We have securely verified your deposit and your booking (Ref: <strong>${referenceCode}</strong>) is now officially confirmed.</p>
         <p>Our team will be in touch shortly with your pre-arrival information and next steps.</p>
+        <div style="background-color: #fff0f3; border: 1px solid #ff2a70; border-radius: 8px; padding: 12px 16px; margin: 20px 0;">
+          <p style="margin: 0; font-size: 0.75rem; font-weight: 700; color: #cc1a55; text-transform: uppercase; letter-spacing: 0.05em;">
+            ⚠ Deposits are non-refundable. All sales are final. Service balances are due 10 days prior to service rendered.
+          </p>
+        </div>
         <p>Warmly,<br/>Pink Lux Concierge</p>
       </div>`
     });
@@ -111,6 +116,12 @@ export async function notifyUserOfPendingDeposit(userEmail: string, fullName: st
           <li><strong>Cash App:</strong> $crown973</li>
           <li><strong>Zelle:</strong> 786-566-5508</li>
         </ul>
+
+        <div style="background-color: #fff0f3; border: 1px solid #ff2a70; border-radius: 8px; padding: 12px 16px; margin: 20px 0;">
+          <p style="margin: 0; font-size: 0.75rem; font-weight: 700; color: #cc1a55; text-transform: uppercase; letter-spacing: 0.05em;">
+            ⚠ Deposits are non-refundable. All sales are final. Service balances are due 10 days prior to service rendered.
+          </p>
+        </div>
 
         <p>Once you make the deposit, our team will verify it and send your final confirmation.</p>
         <p>Warmly,<br/>Pink Lux Concierge</p>
