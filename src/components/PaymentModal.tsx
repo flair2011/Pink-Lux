@@ -2,17 +2,19 @@
 
 import React, { useState } from "react";
 import { Copy, Check, Info } from "lucide-react";
-import { BUSINESS_CONFIG } from "@/config/business";
+import type { PaymentSettings } from "@/config/business";
 import { notifyOwnerOfDeposit } from "@/app/actions/emailActions";
 
-export default function PaymentModal({ 
-  isOpen, 
-  onClose, 
-  referenceCode 
-}: { 
-  isOpen: boolean; 
-  onClose: () => void; 
-  referenceCode: string; 
+export default function PaymentModal({
+  isOpen,
+  onClose,
+  referenceCode,
+  paymentSettings,
+}: {
+  isOpen: boolean;
+  onClose: () => void;
+  referenceCode: string;
+  paymentSettings: PaymentSettings;
 }) {
   const [copiedApp, setCopiedApp] = useState<"cashapp" | "zelle" | null>(null);
   const [isNotifying, setIsNotifying] = useState(false);
@@ -45,7 +47,7 @@ export default function PaymentModal({
         </div>
 
         <p className="text-on-surface-variant mb-4">
-          Your booking request has been securely received. To verify and confirm your dates, a $250 deposit is required. 
+          Your booking request has been securely received. To verify and confirm your dates, a {`$${paymentSettings.DEPOSIT_AMOUNT}`} deposit is required.
         </p>
 
         <div className="flex items-start gap-3 p-4 rounded-xl bg-error-container/20 border border-error/20 mb-6">
@@ -72,10 +74,10 @@ export default function PaymentModal({
           <div className="flex items-center justify-between p-4 bg-surface-container-low rounded-xl">
             <div>
               <p className="text-sm text-on-surface-variant font-medium">Cash App</p>
-              <p className="font-semibold">{BUSINESS_CONFIG.PAYMENT.CASH_APP_HANDLE}</p>
+              <p className="font-semibold">{paymentSettings.CASH_APP_HANDLE}</p>
             </div>
             <button
-              onClick={() => handleCopy(BUSINESS_CONFIG.PAYMENT.CASH_APP_HANDLE, "cashapp")}
+              onClick={() => handleCopy(paymentSettings.CASH_APP_HANDLE, "cashapp")}
               className="p-3 bg-surface-container-highest rounded-full hover:bg-primary hover:text-on-primary transition-colors"
             >
               {copiedApp === "cashapp" ? <Check className="w-5 h-5 text-green-500" /> : <Copy className="w-5 h-5" />}
@@ -85,10 +87,10 @@ export default function PaymentModal({
           <div className="flex items-center justify-between p-4 bg-surface-container-low rounded-xl">
             <div>
               <p className="text-sm text-on-surface-variant font-medium">Zelle</p>
-              <p className="font-semibold">{BUSINESS_CONFIG.PAYMENT.ZELLE_EMAIL}</p>
+              <p className="font-semibold">{paymentSettings.ZELLE_HANDLE}</p>
             </div>
             <button
-              onClick={() => handleCopy(BUSINESS_CONFIG.PAYMENT.ZELLE_EMAIL, "zelle")}
+              onClick={() => handleCopy(paymentSettings.ZELLE_HANDLE, "zelle")}
               className="p-3 bg-surface-container-highest rounded-full hover:bg-secondary hover:text-on-secondary transition-colors"
             >
               {copiedApp === "zelle" ? <Check className="w-5 h-5 text-green-500" /> : <Copy className="w-5 h-5" />}

@@ -33,6 +33,11 @@
   --color-error-container: #FDECEA;
   --color-on-error-container: #B71C1C;
 
+  --color-success-container: #E3F5E9;
+  --color-on-success-container: #1B5E33;
+  --color-warning-container: #FFEEDD;
+  --color-on-warning-container: #A15C00;
+
   --color-outline: #C4C4C4;
   --color-outline-variant: #E0E0E0;
 
@@ -89,6 +94,11 @@
   --color-on-error: #690005;
   --color-error-container: #3D0005;
   --color-on-error-container: #FFB4AB;
+
+  --color-success-container: #123322;
+  --color-on-success-container: #8FE3AE;
+  --color-warning-container: #3D2400;
+  --color-on-warning-container: #FFC27A;
 
   --color-outline: #8C7882;
   --color-outline-variant: #403038;

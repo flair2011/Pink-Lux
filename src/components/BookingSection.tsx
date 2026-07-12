@@ -6,8 +6,9 @@ import PaymentModal from "./PaymentModal";
 import PremiumDatePicker from "./PremiumDatePicker";
 import PremiumSelect from "./PremiumSelect";
 import { Loader2 } from "lucide-react";
+import type { PaymentSettings } from "@/config/business";
 
-export default function BookingSection() {
+export default function BookingSection({ paymentSettings }: { paymentSettings: PaymentSettings }) {
   const [activeTab, setActiveTab] = useState("short-term-stay");
   
   // Modal State
@@ -88,10 +89,11 @@ export default function BookingSection() {
 
   return (
     <section className="py-24 bg-surface px-6" id="booking">
-      <PaymentModal 
-        isOpen={isModalOpen} 
-        onClose={() => setIsModalOpen(false)} 
-        referenceCode={referenceCode} 
+      <PaymentModal
+        isOpen={isModalOpen}
+        onClose={() => setIsModalOpen(false)}
+        referenceCode={referenceCode}
+        paymentSettings={paymentSettings}
       />
 
       <div className="max-w-4xl mx-auto">
@@ -283,7 +285,7 @@ export default function BookingSection() {
             <div className="flex items-start gap-4 p-4 rounded-xl bg-secondary-container/10 border border-secondary/20">
               <span className="material-symbols-outlined text-secondary mt-0.5">payments</span>
               <div className="text-xs text-secondary font-medium leading-relaxed space-y-1">
-                <p>Secure your dates with a $250 deposit via Zelle or Cash App.</p>
+                <p>Secure your dates with a {`$${paymentSettings.DEPOSIT_AMOUNT}`} deposit via Zelle or Cash App.</p>
                 <p className="font-bold uppercase tracking-wide text-primary/80">⚠ Deposits are non-refundable. All sales are final. Service balances are due 10 days prior to service rendered.</p>
               </div>
             </div>

@@ -4,12 +4,14 @@ import { useState } from "react";
 import { signInWithEmailAndPassword } from "firebase/auth";
 import { auth } from "@/lib/firebase/client";
 import { createSession } from "@/app/actions/adminActions";
-import { Loader2 } from "lucide-react";
+import { Loader2, Eye, EyeOff } from "lucide-react";
 import { useRouter } from "next/navigation";
 
 export default function AdminLogin() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [showPassword, setShowPassword] = useState(false);
+  const [rememberMe, setRememberMe] = useState(true);
   const [errorMsg, setErrorMsg] = useState("");
   const [isLoading, setIsLoading] = useState(false);
   const router = useRouter();
@@ -22,8 +24,8 @@ export default function AdminLogin() {
     try {
       const userCredential = await signInWithEmailAndPassword(auth, email, password);
       const idToken = await userCredential.user.getIdToken();
-      
-      const response = await createSession(idToken);
+
+      const response = await createSession(idToken, rememberMe);
       if (response.success) {
         // Force refresh allowing middleware to recognize session cookie state immediately.
         router.push("/admin");
@@ -63,15 +65,35 @@ export default function AdminLogin() {
           </div>
           <div>
             <label className="block text-sm font-semibold mb-2 ml-1">Password</label>
-            <input
-              type="password"
-              required
-              value={password}
-              onChange={(e) => setPassword(e.target.value)}
-              className="w-full bg-surface-container-low border-none rounded-xl p-4 focus:ring-2 focus:ring-primary/20 outline-none"
-            />
+            <div className="relative">
+              <input
+                type={showPassword ? "text" : "password"}
+                required
+                value={password}
+                onChange={(e) => setPassword(e.target.value)}
+                className="w-full bg-surface-container-low border-none rounded-xl p-4 pr-12 focus:ring-2 focus:ring-primary/20 outline-none"
+              />
+              <button
+                type="button"
+                onClick={() => setShowPassword((prev) => !prev)}
+                aria-label={showPassword ? "Hide password" : "Show password"}
+                className="absolute inset-y-0 right-0 flex items-center px-4 text-on-surface-variant hover:text-primary transition-colors"
+              >
+                {showPassword ? <EyeOff className="w-5 h-5" /> : <Eye className="w-5 h-5" />}
+              </button>
+            </div>
           </div>
-          
+
+          <label className="flex items-center gap-2 ml-1 text-sm font-medium cursor-pointer select-none">
+            <input
+              type="checkbox"
+              checked={rememberMe}
+              onChange={(e) => setRememberMe(e.target.checked)}
+              className="w-4 h-4 rounded accent-primary"
+            />
+            Remember me
+          </label>
+
           <button
             disabled={isLoading}
             type="submit"

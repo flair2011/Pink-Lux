@@ -24,3 +24,13 @@ export const bookingFormSchema = z.object({
 });
 
 export type BookingFormData = z.infer<typeof bookingFormSchema>;
+
+export type BookingStatus = "Pending Deposit" | "Deposit Verified";
+
+export type Booking = BookingFormData & {
+  id: string;
+  referenceCode: string;
+  status: BookingStatus;
+  createdAt: number;
+  updatedAt: number | null;
+};

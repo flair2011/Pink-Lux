@@ -1,5 +1,6 @@
 "use server";
 
+import { z } from "zod";
 import { db } from "@/lib/firebase/admin";
 import { bookingFormSchema, BookingFormData } from "@/lib/schema/booking";
 import * as admin from 'firebase-admin';
@@ -52,14 +53,13 @@ export async function createBooking(data: BookingFormData) {
     ]);
 
     return { success: true, referenceCode };
-  } catch (error: any) {
+  } catch (error: unknown) {
     console.error("Booking generation failed:", error);
-    
-    // Check if it's a Zod validation error
-    if (error.errors && Array.isArray(error.errors)) {
+
+    if (error instanceof z.ZodError) {
        return { success: false, error: "Validation failed. Please check your inputs." };
     }
 
-    return { success: false, error: error.message || "Something went wrong creating the booking" };
+    return { success: false, error: error instanceof Error ? error.message : "Something went wrong creating the booking" };
   }
 }

@@ -1,6 +1,7 @@
 "use client";
 
 import React from "react";
+import Image from "next/image";
 import ThemeToggle from "./ThemeToggle";
 
 const Navbar = () => {
@@ -11,7 +12,7 @@ const Navbar = () => {
       <nav className="fixed top-0 w-full z-40 glass-nav">
         <div className="flex justify-between items-center w-full px-6 py-4 max-w-7xl mx-auto">
           <div className="flex items-center gap-2">
-            <img src="/pinkluxconcierge-logo.jpeg" alt="Pink Lux Concierge" className="h-14 md:h-20 w-14 md:w-20 object-cover rounded-full" />
+            <Image src="/pinkluxconcierge-logo.jpeg" alt="Pink Lux Concierge" width={80} height={80} priority className="h-14 md:h-20 w-14 md:w-20 object-cover rounded-full" />
           </div>
           
           {/* Desktop Navigation */}
@@ -51,7 +52,7 @@ const Navbar = () => {
         {/* Mobile Header (Inside Overlay) */}
         <div className="flex justify-between items-center w-full px-6 py-4 border-b border-primary/10">
           <div className="flex items-center gap-2">
-            <img src="/pinkluxconcierge-logo.jpeg" alt="Pink Lux Concierge" className="h-16 w-16 object-cover rounded-full" />
+            <Image src="/pinkluxconcierge-logo.jpeg" alt="Pink Lux Concierge" width={64} height={64} className="h-16 w-16 object-cover rounded-full" />
           </div>
           <button 
             className="text-primary p-2"

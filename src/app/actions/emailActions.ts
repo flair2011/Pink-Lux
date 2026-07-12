@@ -1,6 +1,7 @@
 "use server";
 
 import { Resend } from 'resend';
+import { getBusinessSettings } from '@/lib/business/settings';
 
 const resendApiKey = process.env.RESEND_API_KEY;
 const resend = resendApiKey ? new Resend(resendApiKey) : null;
@@ -25,7 +26,7 @@ export async function notifyOwnerOfDeposit(referenceCode: string) {
     });
 
     return { success: true, mocked: false };
-  } catch (error) {
+  } catch (error: unknown) {
     console.error("Failed to send email via Resend:", error);
     return { success: false, error: String(error) };
   }
@@ -57,7 +58,7 @@ export async function notifyUserOfVerification(userEmail: string, fullName: stri
     });
 
     return { success: true, mocked: false };
-  } catch (error) {
+  } catch (error: unknown) {
     console.error("Failed to send verification email via Resend:", error);
     return { success: false, error: String(error) };
   }
@@ -83,7 +84,7 @@ export async function notifyOwnerOfNewBooking(clientName: string, referenceCode:
       </div>`
     });
     return { success: true, mocked: false };
-  } catch (error) {
+  } catch (error: unknown) {
     console.error("Failed to send owner new booking email:", error);
     return { success: false, error: String(error) };
   }
@@ -94,7 +95,9 @@ export async function notifyUserOfPendingDeposit(userEmail: string, fullName: st
     console.warn("RESEND_API_KEY is not set. Email notification mocked.");
     return { success: true, mocked: true };
   }
-  
+
+  const paymentSettings = await getBusinessSettings();
+
   try {
     await resend.emails.send({
       from: 'Pink Lux Concierge <booking@pinkluxconcierge.com>',
@@ -113,8 +116,8 @@ export async function notifyUserOfPendingDeposit(userEmail: string, fullName: st
 
         <h3>Payment Methods</h3>
         <ul>
-          <li><strong>Cash App:</strong> $crown973</li>
-          <li><strong>Zelle:</strong> 786-566-5508</li>
+          <li><strong>Cash App:</strong> ${paymentSettings.CASH_APP_HANDLE}</li>
+          <li><strong>Zelle:</strong> ${paymentSettings.ZELLE_HANDLE}</li>
         </ul>
 
         <div style="background-color: #fff0f3; border: 1px solid #ff2a70; border-radius: 8px; padding: 12px 16px; margin: 20px 0;">
@@ -128,7 +131,7 @@ export async function notifyUserOfPendingDeposit(userEmail: string, fullName: st
       </div>`
     });
     return { success: true, mocked: false };
-  } catch (error) {
+  } catch (error: unknown) {
     console.error("Failed to send user pending deposit email:", error);
     return { success: false, error: String(error) };
   }

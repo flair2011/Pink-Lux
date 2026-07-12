@@ -1,26 +1,12 @@
 "use client";
 
 import React, { useState } from 'react';
-import { useRouter } from 'next/navigation';
-import { verifyDeposit } from '@/app/actions/adminActions';
-import { ChevronDown, ChevronUp, CheckCircle, Loader2 } from 'lucide-react';
+import { ChevronDown, ChevronUp } from 'lucide-react';
+import type { Booking } from '@/lib/schema/booking';
+import VerifyDepositButton from '@/components/admin/VerifyDepositButton';
 
-// eslint-disable-next-line @typescript-eslint/no-explicit-any
-export default function AdminTable({ bookings }: { bookings: any[] }) {
-  const router = useRouter();
+export default function AdminTable({ bookings }: { bookings: Booking[] }) {
   const [expandedId, setExpandedId] = useState<string | null>(null);
-  const [processingId, setProcessingId] = useState<string | null>(null);
-
-  const handleVerify = async (id: string) => {
-    setProcessingId(id);
-    const res = await verifyDeposit(id);
-    if (res.success) {
-      router.refresh(); // Soft refresh to pick up new Server state
-    } else {
-      alert(res.error);
-    }
-    setProcessingId(null);
-  };
 
   if (!bookings.length) {
     return (
@@ -71,23 +57,14 @@ export default function AdminTable({ bookings }: { bookings: any[] }) {
                     {b.serviceType || 'Short Term Stay'}
                   </span>
                   <span className={`inline-flex items-center px-3 py-1 rounded-full text-xs font-bold whitespace-nowrap ${
-                    isVerified ? "bg-green-100 text-green-700" : "bg-orange-100 text-orange-700"
+                    isVerified ? "bg-success-container text-on-success-container" : "bg-warning-container text-on-warning-container"
                   }`}>
                     {b.status}
                   </span>
                 </div>
                 
                 <div className="w-full md:w-auto mt-2 md:mt-0 flex items-center justify-end gap-4">
-                  {!isVerified && (
-                    <button
-                      onClick={(e) => { e.stopPropagation(); handleVerify(b.id); }}
-                      disabled={processingId === b.id}
-                      className="w-full md:w-auto px-4 py-2 bg-primary text-on-primary text-sm font-bold rounded-lg hover:opacity-90 transition disabled:opacity-50 flex items-center justify-center gap-2"
-                    >
-                      {processingId === b.id ? <Loader2 className="w-4 h-4 animate-spin" /> : <CheckCircle className="w-4 h-4" />}
-                      Verify Deposit
-                    </button>
-                  )}
+                  {!isVerified && <VerifyDepositButton bookingId={b.id} />}
                   <div className="hidden md:block">
                     {isExpanded ? <ChevronUp className="text-outline" /> : <ChevronDown className="text-outline" />}
                   </div>
